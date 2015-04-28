@@ -18,8 +18,6 @@ class Cadastro {
     public function cadastrar($pessoa, $contato) {
         $telefones = $contato->getTelefone();
 
-//        var_dump($telefones);
-//        exit;
         //valida se o telefone ja esta cadastrado
         foreach ($telefones as $key => $value) {
             if ($this->contatosModel->validar_telefone($value)){
