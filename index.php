@@ -11,6 +11,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     </head>
     <body>
+        <?php // var_dump(extension_loaded("mongo")); ?>
         <form action="cadastro.php" method="POST" class="form-horizontal">
             <div class="tab-content">
                 <div class="tab-pane active" id="access">

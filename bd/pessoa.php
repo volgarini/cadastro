@@ -1,6 +1,6 @@
 <?php
 
-class Pessoa {
+class Pessoa{
     
     private $id;
     private $nome;
@@ -32,4 +32,9 @@ class Pessoa {
     public function setId($id){
         return $this->id = $id;
     }
+    
+    public function getDados() {
+        return get_object_vars($this);
+    }
+
 }

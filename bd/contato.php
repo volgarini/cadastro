@@ -1,4 +1,5 @@
 <?php
+
 class Contato {
 
     private $telefone;
@@ -18,9 +19,13 @@ class Contato {
     public function getPessoa() {
         return $this->pessoa;
     }
-    
+
     public function getTipo() {
         return $this->tipo;
+    }
+
+    public function getDados() {
+        return get_object_vars($this);
     }
 
 }

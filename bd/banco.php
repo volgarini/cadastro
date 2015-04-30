@@ -1,10 +1,10 @@
 <?php
 class Banco {
 
-    var $servidor;
-    var $usuario;
-    var $senha;
-    var $banco;
+    private $servidor;
+    private $usuario;
+    private $senha;
+    private $banco;
 
     public function __construct() {
         $this->servidor = 'localhost';
@@ -17,7 +17,11 @@ class Banco {
         return new mysqli($this->servidor, $this->usuario, $this->senha, $this->banco);
     }
 
+    public function getServidor(){
+        return $this->servidor;
+    }
+    
+    public function getBanco(){
+        return $this->banco;
+    }
 }
-
-//$banco = new Banco();
-//$banco->conectar();
