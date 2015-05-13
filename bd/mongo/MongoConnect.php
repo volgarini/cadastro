@@ -11,35 +11,28 @@
  *
  * @author Lucas
  */
-if (!class_exists('Banco', false)) {
-    require('db\banco.php');
-}
-
-class MongoConect extends Banco {
-
+class MongoConnect {
     private $datab;
-
     public function __construct() {
-        parent::__construct();
         $mongo = new MongoClient();
         $mongo->connect();
-        $db = parent::getBanco();
+        $db = 'cadastro';
         $this->datab = $mongo->$db;
     }
 
-    public function inserir($collection, $dados) {
+    protected function inserir($dados, $collection) {
         return $this->datab->$collection->insert($dados);
     }
 
-    public function buscar($collection) {
+    protected function buscar($collection) {
         return $this->datab->$collection->find();
     }
 
-    public function buscar_filtro($collection, $filtro) {
+    protected function buscarFiltro($filtro, $collection) {
         return $this->datab->$collection->findOne($filtro);
     }
 
-    public function apagar($collection) {
+    protected function apagar($collection) {
         $this->datab->$collection->drop();
     }
 
